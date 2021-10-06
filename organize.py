@@ -1,7 +1,7 @@
-#import libraries
 import os
 from pathlib import Path
-#Dictionary (Add more if you want)
+
+# Dictionary 
 DIRECTORIES = {
     "HTML": [".html5", ".html", ".htm", ".xhtml"],
     "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
@@ -27,7 +27,7 @@ DIRECTORIES = {
 FILE_FORMATS = {file_format: directory
                 for directory, file_formats in DIRECTORIES.items()
                 for file_format in file_formats}
-#This will organise your files
+
 def organize():
     for entry in os.scandir():
         if entry.is_dir():
@@ -38,6 +38,7 @@ def organize():
             directory_path = Path(FILE_FORMATS[file_format])
             directory_path.mkdir(exist_ok=True)
             file_path.rename(directory_path.joinpath(file_path))
+
    #if extension not present in the dctionary than create a folder name "OTHER"
     try:
         os.mkdir("OTHER")
@@ -51,5 +52,6 @@ def organize():
                 os.rename(os.getcwd() + '/' + str(Path(dir)), os.getcwd() + '/OTHER/' + str(Path(dir)))
         except:
             pass
+        
 if __name__ == "__main__":
     organize()
