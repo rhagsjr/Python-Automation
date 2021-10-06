@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-#  Dictionary 
+# Dictionary 
 DIRECTORIES = {
     "HTML": [".html5", ".html", ".htm", ".xhtml"],
     "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
