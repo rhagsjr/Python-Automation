@@ -6,7 +6,7 @@ import pandas as pd
 
 
 # Make requests from webpage
-url = 'https://www.worldometers.info/coronavirus/country/india/'
+url = 'https://www.worldometers.info/coronavirus/country/us/'
 result = requests.get(url)
 
 
